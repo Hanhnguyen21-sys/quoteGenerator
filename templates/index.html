@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Hello Nguyen</title>
+        <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
+    </head>
+    <body>
+        <img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/37eff7fa00de26db41183a3ad8ed0e9119fbc44b/svgs/regular/face-grin-stars.svg">
+        <br>
+        <!--Sending data to server , we use post and fetch data use get-->
+        <form action="greet" method="post">
+                {% for message in get_flashed_messages()%}
+                    {{message}}
+                {% endfor%}
+                <br>
+                <input type="text" name = "name_input">
+                <br>
+                <br>
+                <input type="submit" value="Find a Quote" id = "greet">
+            </p>
+        </form>
+    </body>
+</html>
